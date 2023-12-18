@@ -1,0 +1,20 @@
+.location-info {
+    text-align: center;
+    color: white; /* Assuming white text based on the provided image */
+  }
+  
+  .location-name {
+    font-size: 1.8em;
+    margin: 0.3em 0;
+  }
+  
+  .location-date {
+    font-size: 1.2em;
+    margin: 0.2em 0;
+  }
+  
+  .location-population {
+    font-size: 1em;
+    margin: 0.2em 0;
+  }
+  
