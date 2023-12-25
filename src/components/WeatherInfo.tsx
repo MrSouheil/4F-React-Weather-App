@@ -1,37 +1,23 @@
 import React from 'react';
-import './WeatherInfo.css';
+import './WeatherInfo.css'; // Assuming you have a CSS file named WeatherInfo.css
 
-interface WeatherInfoProps {
-  temperature: number;
-  weatherCondition: string;
-  sunrise: number;
-  sunset: number;
-  windSpeed: number;
-  humidity: number;
-  pressure: number;
-}
+const WeatherInfo = ({ data }:any) => {
+  const { temperature, weatherDescription, sunrise, sunset, windSpeed, humidity, pressure } = data;
 
-const WeatherInfo: React.FC<WeatherInfoProps> = ({
-  temperature,
-  weatherCondition,
-  sunrise,
-  sunset,
-  windSpeed,
-  humidity,
-  pressure
-}) => {
-  const formatTime = (unixTime: number) => new Date(unixTime * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  // Format sunrise and sunset times
+  const formattedSunrise = sunrise.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const formattedSunset = sunset.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   return (
     <div className="weather-info">
-      <div className="temperature">{temperature}°C</div>
-      <div className="condition">{weatherCondition}</div>
-      <div className="sun-times">
-        <div className="sunrise">🌅 {formatTime(sunrise)}</div>
-        <div className="sunset">🌇 {formatTime(sunset)}</div>
+      <div className="weather-temp">{temperature}°C</div>
+      <div className="weather-description">{weatherDescription}</div>
+      <div className="weather-sun-times">
+        <span className="sunrise">🌅 {formattedSunrise}</span>
+        <span className="sunset">🌇 {formattedSunset}</span>
       </div>
-      <div className="additional-info">
-        <div className="wind">💨 {windSpeed} m/s N</div>
+      <div className="weather-stats">
+        <div className="wind-speed">💨 {windSpeed} m/s</div>
         <div className="humidity">💧 {humidity}%</div>
         <div className="pressure">🔵 {pressure} hPa</div>
       </div>

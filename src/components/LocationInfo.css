@@ -1,20 +1,24 @@
 .location-info {
-    text-align: center;
-    color: white; /* Assuming white text based on the provided image */
+    background: rgba(255, 255, 255, 0.2); /* Translucent background */
+    backdrop-filter: blur(5px); /* Blur effect for the background */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 40%;
   }
   
   .location-name {
-    font-size: 1.8em;
-    margin: 0.3em 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
   
-  .location-date {
-    font-size: 1.2em;
-    margin: 0.2em 0;
-  }
-  
-  .location-population {
-    font-size: 1em;
-    margin: 0.2em 0;
+  .location-time, .location-population {
+    font-size: 18px;
+    margin: 5px 0;
   }
   

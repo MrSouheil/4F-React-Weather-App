@@ -1,37 +1,28 @@
 import React, { useState } from 'react';
-import './SearchInput.css';
+import './SearchInput.css'; // Assuming you have a CSS file named SearchInput.css
 
-interface SearchInputProps {
-  onSearch: (city: string) => void;
-}
+const SearchInput = ({ onSearch }:any) => {
+  const [cityName, setCityName] = useState('');
 
-const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
-  const [city, setCity] = useState('');
-
-  const handleSearch = () => {
-    onSearch(city);
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
-      handleSearch();
+  const handleSubmit = (event:any) => {
+    event.preventDefault();
+    if (cityName.trim()) {
+      onSearch(cityName.trim());
+      setCityName(''); // Reset input after search
     }
   };
 
   return (
-    <div className="search-container">
+    <form onSubmit={handleSubmit} className="search-form">
       <input
         type="text"
-        placeholder="Enter city"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        onKeyPress={handleKeyPress}
+        value={cityName}
+        onChange={(e) => setCityName(e.target.value)}
+        placeholder="Enter city name"
         className="search-input"
       />
-      <button onClick={handleSearch} className="search-button">
-        🔍
-      </button>
-    </div>
+      <button type="submit" className="search-button">Search</button>
+    </form>
   );
 };
 

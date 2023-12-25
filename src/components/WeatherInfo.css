@@ -1,43 +1,46 @@
 .weather-info {
-    color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.2); /* Translucent background */
+    backdrop-filter: blur(5px); /* Blur effect for the background */
     border-radius: 15px;
     padding: 20px;
-    margin-top: 20px; /* Adjust as needed */
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    align-items: start;
+    width: 40%;
+  }
+  
+  .weather-temp {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .weather-description {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .weather-sun-times {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .weather-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .weather-stats div {
+    display: flex;
     align-items: center;
   }
   
-  .temperature {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .condition {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .sun-times {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .sunrise, .sunset {
-    font-size: 1.2rem;
-  }
-  
-  .additional-info {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-  
-  .wind, .humidity, .pressure {
-    font-size: 1rem;
+  .sunrise, .sunset, .wind-speed, .humidity, .pressure {
+    font-size: 18px;
   }
   
